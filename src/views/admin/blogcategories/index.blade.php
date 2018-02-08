@@ -1,9 +1,6 @@
-@extends('admin.index')
-@section('previous')
-<a type="submit" href="{{ route('admin.blog.blogcategories.index') }}" class="btn btn-sm btn-primary" target="_blank" title="go back"><i class="fa fa-angle-left"></i> GO BACK</a>
-            <h2>Categories</h2>
-@endsection
-@section('maincontent')
+@extends('layouts.app')
+
+@section('content')
 
 
             @if (count($blogcategories) > 0)

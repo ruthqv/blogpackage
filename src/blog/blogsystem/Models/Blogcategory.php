@@ -90,12 +90,12 @@ class Blogcategory extends Model
         return $fields;
     }
     public function photos() {
-        return $this->morphMany('App\Models\Photo','photostable')->orderBy('order');
+        return $this->morphMany('blog\blogsystem\Models\Photo','photostable')->orderBy('order');
     }
 
     
     public function defaultPhoto() {
-        return $this->morphOne('App\Models\Photo','photostable')->where('default', true);
+        return $this->morphOne('blog\blogsystem\Models\Photo','photostable')->where('default', true);
     }
 
 

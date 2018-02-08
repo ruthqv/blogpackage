@@ -1,9 +1,9 @@
-@extends('admin.index')
+@extends('layouts.app')
 @section('previous')
 <a type="submit" href="{{ route('admin.blog.blogcategories.index') }}" class="btn btn-sm btn-primary" target="_blank" title="go back"><i class="fa fa-angle-left"></i> GO BACK</a>
             <h2>Edit Category</h2>
 @endsection
-@section('maincontent')
+@section('content')
 
             <form method="POST" action="{{ route('admin.blog.blogcategories.update', $blogcategory['id']) }}" accept-charset="UTF-8" role="form"  enctype="multipart/form-data"  class="form" data-id="{{ $blogcategory['id'] }}"  data-type="blog/blogsystem/Models/Category">
             

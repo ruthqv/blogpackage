@@ -1,9 +1,6 @@
-@extends('admin.index')
-@section('previous')
-<a type="submit" href="{{ route('admin.blog.blogcategories.index') }}" class="btn btn-sm btn-primary" target="_blank" title="go back"><i class="fa fa-angle-left"></i> GO BACK</a>
-            <h2>Create new Blog Category</h2>
-@endsection
-@section('maincontent') 
+@extends('layouts.app')
+
+@section('content') 
             <form method="POST" action="{{ route('admin.blog.blogcategories.store') }}" accept-charset="UTF-8" role="form"  enctype="multipart/form-data" >
                 {{ csrf_field() }}
 

@@ -101,16 +101,16 @@ class Post extends Model
 
     public function author()
     {
-        return $this->hasOne('App\Models\User', 'id','user_id');
+        return $this->hasOne('App\User', 'id','user_id');
     }    
     public function photos()
     {
-        return $this->morphMany('App\Models\Photo', 'photostable')->orderBy('order');
+        return $this->morphMany('blog\blogsystem\Models\Photo', 'photostable')->orderBy('order');
     }
 
     public function defaultPhoto()
     {
-        return $this->morphOne('App\Models\Photo', 'photostable')->where('default', true);
+        return $this->morphOne('blog\blogsystem\Models\Photo', 'photostable')->where('default', true);
     }
 
     public function blogcategory()

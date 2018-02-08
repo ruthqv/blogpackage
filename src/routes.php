@@ -1,7 +1,7 @@
 <?php
 
 // Admin
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'role:admin']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['web']], function () {
     Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
         // Blogcategories
         Route::group(['prefix' => 'blogcategories', 'as' => 'blogcategories'], function () {

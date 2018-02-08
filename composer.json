@@ -21,7 +21,10 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.6.4",
-        "commentssystem/commentssystem":"*"
+        "commentssystem/commentssystem":"*",
+        "langssystem/langssystem":"*",
+        
+
     },
     "autoload": {
         "psr-4": {

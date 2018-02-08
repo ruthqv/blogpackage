@@ -1,9 +1,6 @@
-@extends('admin.index')
-@section('previous')
-<a type="submit" href="{{ route('admin.blog.posts.index') }}" class="btn btn-sm btn-primary" target="_blank" title="go back"><i class="fa fa-angle-left"></i> GO BACK</a>
-            <h1>Posts ({{ $posts->total() }})</h1>
-@endsection
-@section('maincontent') 
+@extends('layouts.app')
+
+@section('content') 
  <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover">
                     <tr>

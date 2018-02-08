@@ -1,9 +1,6 @@
-@extends('admin.index')
-@section('previous')
-<a type="submit" href="{{ route('admin.blog.posts.index') }}" class="btn btn-sm btn-primary" target="_blank" title="go back"><i class="fa fa-angle-left"></i> GO BACK</a>
-            <h2>Details</h2>
-@endsection
-@section('maincontent') 
+@extends('layouts.app')
+
+@section('content') 
 
   <form method="POST" action="{{ route('admin.blog.posts.update', $post['id']) }}" accept-charset="UTF-8" enctype="multipart/form-data" role="form"  class="form" data-id="{{ $post['id'] }}"  data-type="blog/blogsystem/Models/Post">
                 {{ csrf_field() }}
