@@ -11,7 +11,7 @@
 
                     <input type="text" id="name" class="form-control namefortrans" name="name" value="{{ old('name', $post['name']) }}" maxlength="255" required />
 
-                    @include('snippets.errors_first', ['param' => 'name'])
+                    @include('blog::snippets.errors_first', ['param' => 'name'])
                 </div>
 
                 <div class="form-group{{ $errors->has('uri') ? ' has-error' : '' }}">
@@ -21,7 +21,7 @@
 
                     <p class="help-block">To be used in the URL, make sure to use lowercase with hyphen, i.e. "post-title".</p>
 
-                    @include('snippets.errors_first', ['param' => 'uri'])
+                    @include('blog::snippets.errors_first', ['param' => 'uri'])
                 </div>
 
                 <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
@@ -29,7 +29,7 @@
 
                     <textarea id="description" class="form-control descriptionfortrans" name="description" maxlength="2048" rows="5">{{ old('description', $post['description']) }}</textarea>
 
-                    @include('snippets.errors_first', ['param' => 'description'])
+                    @include('blog::snippets.errors_first', ['param' => 'description'])
                 </div>
 
 
@@ -47,7 +47,7 @@
                         @endforeach
                     </select>
 
-                    @include('snippets.errors_first', ['param' => 'blogcategory_id'])
+                    @include('blog::snippets.errors_first', ['param' => 'blogcategory_id'])
                 </div>
 
                 <div class="form-group">
@@ -58,7 +58,7 @@
                     <p class="help-block">Check this to mark this post as a "special" post, which will be shown
                         in the Specials block in homepage.</p>
 
-                    @include('snippets.errors_first', ['param' => 'special'])
+                    @include('blog::snippets.errors_first', ['param' => 'special'])
                 </div>
 
                 <div class="form-group">
@@ -69,7 +69,7 @@
                     <p class="help-block">Check this to mark this post as a "new" post, which will have a "New"
                         ribbon on its thumbnail image.</p>
 
-                    @include('snippets.errors_first', ['param' => 'new'])
+                    @include('blog::snippets.errors_first', ['param' => 'new'])
                 </div>
 
                 <div class="form-group">
@@ -102,7 +102,7 @@
 
                     <p class="help-block">Set the order of this post in its blogcategory.</p>
 
-                    @include('snippets.errors_first', ['param' => 'order'])
+                    @include('blog::snippets.errors_first', ['param' => 'order'])
                 </div>
 
                 @if(env('LANGS') && $post->translatablefields())

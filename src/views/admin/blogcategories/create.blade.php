@@ -11,7 +11,7 @@
 
                             <input type="text" id="name" class="namefortrans form-control" name="name" value="{{ old('name') }}" maxlength="45" required />
 
-                            @include('snippets.errors_first', ['param' => 'name'])
+                            @include('blog::snippets.errors_first', ['param' => 'name'])
                         </div>
 
                         <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
@@ -19,7 +19,7 @@
 
                             <input type="text" id="description" class="descriptionfortrans form-control" name="description" value="{{ old('description') }}" maxlength="45" required />
 
-                            @include('snippets.errors_first', ['param' => 'description'])
+                            @include('blog::snippets.errors_first', ['param' => 'description'])
                         </div>
 
                         <div class="form-group{{ $errors->has('uri') ? ' has-error' : '' }}">
@@ -32,7 +32,7 @@
                                 and separate words by hyphen.
                             </p>
 
-                            @include('snippets.errors_first', ['param' => 'uri'])
+                            @include('blog::snippets.errors_first', ['param' => 'uri'])
                         </div>
                         
 
@@ -49,7 +49,7 @@
                                 @endforeach
                             </select>
 
-                            @include('snippets.errors_first', ['param' => 'parent_id'])
+                            @include('blog::snippets.errors_first', ['param' => 'parent_id'])
                         </div>
                         <div class="form-group">
                             <label for="photos" class="control-label">Photos:</label>
@@ -63,7 +63,7 @@
 
                             <p class="help-block">Set the order of this blogcategory (relative to other categories in the same level).</p>
 
-                            @include('snippets.errors_first', ['param' => 'order'])
+                            @include('blog::snippets.errors_first', ['param' => 'order'])
                         </div>
 
                            @if(env('LANGS') && $translatablefields)
