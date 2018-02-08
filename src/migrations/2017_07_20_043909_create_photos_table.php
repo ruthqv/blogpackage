@@ -20,8 +20,6 @@ class CreatePhotosTable extends Migration {
             $table->morphs('photostable',255); //la clave de todo
 
 			$table->boolean('default')->default(0);
-			$table->integer('brand')->default(0);
-
 			$table->integer('order')->default(0);
 			$table->timestamps();
 			$table->softDeletes();
