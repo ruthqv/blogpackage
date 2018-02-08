@@ -22,7 +22,8 @@
     "require": {
         "php": ">=5.6.4",
         "commentssystem/commentssystem":"*",
-        "langssystem/langssystem":"*"
+        "langssystem/langssystem":"*",
+        "doctrine/dbal": "^2.6"
 
 
     },
