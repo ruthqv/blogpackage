@@ -18,11 +18,11 @@
 			</a>
 
 			<div class="media-body">
-				<h4 class="media-heading"><a href="{{route('blog.blogcategory', blog\blogsystem\Helpers\BlogSystemHelper::geturipostarrayparameters( 'blog\blogsystem\Models\Post', $post['id'] ) ) }}">{!! CustomHelper::gettranslatefield( 'blog\blogsystem\Models\Post','name', $post['id'] )  !!}</a></h4>
+				<h4 class="media-heading"><a href="{{route('blog.blogcategory', blog\blogsystem\Helpers\BlogSystemHelper::geturipostarrayparameters( 'blog\blogsystem\Models\Post', $post['id'] ) ) }}">{!!blog\blogsystem\Helpers\BlogSystemHelper::gettranslatefield( 'blog\blogsystem\Models\Post','name', $post['id'] )  !!}</a></h4>
 						<p><?php  
-							$desc= CustomHelper::gettranslatefield( 'blog\blogsystem\Models\Post','description', $post['id'] ) ;
+							$desc=blog\blogsystem\Helpers\BlogSystemHelper::gettranslatefield( 'blog\blogsystem\Models\Post','description', $post['id'] ) ;
 
-							echo CustomHelper::wordlimit( $desc,8 ); ;?></p>
+							echo blog\blogsystem\Helpers\BlogSystemHelper::wordlimit( $desc,8 ); ;?></p>
 			</div>
 
 		</div>
@@ -43,11 +43,11 @@
 			</a>
 
 			<div class="media-body">
-				<h4 class="media-heading"><a href="{{route('blog.blogcategory', blog\blogsystem\Helpers\BlogSystemHelper::geturiarrayparameters( 'blog\blogsystem\Models\Blogcategory', $blogcategory['id'] ) ) }}">{!! CustomHelper::gettranslatefield( 'blog\blogsystem\Models\Blogcategory','name', $blogcategory['id'] )  !!}</a></h4>
+				<h4 class="media-heading"><a href="{{route('blog.blogcategory', blog\blogsystem\Helpers\BlogSystemHelper::geturiarrayparameters( 'blog\blogsystem\Models\Blogcategory', $blogcategory['id'] ) ) }}">{!!blog\blogsystem\Helpers\BlogSystemHelper::gettranslatefield( 'blog\blogsystem\Models\Blogcategory','name', $blogcategory['id'] )  !!}</a></h4>
 						<p><?php  
-							$desc= CustomHelper::gettranslatefield( 'blog\blogsystem\Models\Blogcategory','description', $blogcategory['id'] ) ;
+							$desc=blog\blogsystem\Helpers\BlogSystemHelper::gettranslatefield( 'blog\blogsystem\Models\Blogcategory','description', $blogcategory['id'] ) ;
 
-							echo CustomHelper::wordlimit( $desc,8 ); ;?></p>
+							echo blog\blogsystem\Helpers\BlogSystemHelper::wordlimit( $desc,8 ); ;?></p>
 			</div>
 
 		</div>

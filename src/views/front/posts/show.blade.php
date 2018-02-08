@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				 <h4 class="widget-title">{!! CustomHelper::gettranslatefield( 'blog\blogsystem\Models\Post','name', $post['id'] )  !!}</h4>
+				 <h4 class="widget-title">{!!blog\blogsystem\Helpers\BlogSystemHelper::gettranslatefield( 'blog\blogsystem\Models\Post','name', $post['id'] )  !!}</h4>
 
 				<div class="post post-single">
 					<div class="post-thumb">
@@ -36,10 +36,10 @@
 						</ul>
 					</div>
 					<div class="post-content post-excerpt">
-						<p>{!! CustomHelper::gettranslatefield( 'blog\blogsystem\Models\Post','description', $post['id'] )  !!}</p>
+						<p>{!!blog\blogsystem\Helpers\BlogSystemHelper::gettranslatefield( 'blog\blogsystem\Models\Post','description', $post['id'] )  !!}</p>
 				    </div>
 			         
-			         @include('front.elements.sharesocial')
+			         @include('blog::front.sharesocial')
 					
 					@if(env('COMMENTS') == true )
 						

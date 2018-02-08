@@ -2,7 +2,7 @@
 
 namespace blog\blogsystem;
 
-use App\Helpers\CustomHelper;
+use blog\blogsystem\Helpers\BlogSystemHelper;
 use App\Http\Controllers\Controller;
 use blog\blogsystem\Models\Blogcategory;
 use langs\langssystem\Models\Lang;
@@ -43,7 +43,7 @@ class BlogcategoriesController extends Controller
             unset($data['parent_id']);
         }
 
-        $createdBlogategory = Blogategory::create($data);
+        $createdBlogategory = Blogcategory::create($data);
         // If Product record is created we begin store photos and languages fields
 
         // If Product record is created we begin store photos and languages fields
@@ -73,7 +73,7 @@ class BlogcategoriesController extends Controller
 
                 $files = $request->file('photos');
 
-                $upload = CustomHelper::uploadphotos($createdBlogategory['id'], $this->morphtables_type, $files, 'blogcategories');
+                $upload =BlogSystemHelper::uploadphotos($createdBlogategory['id'], $this->morphtables_type, $files, 'blogcategories');
             }
 
             cache()->flush();
@@ -107,14 +107,14 @@ class BlogcategoriesController extends Controller
         $data['menu']    = isset($data['menu']);
         $data['special'] = isset($data['special']);
 
-        $updatephotos = CustomHelper::updatephotos($blogcategory['id'], $this->morphtables_type, $photosData, 'blogcategory');
+        $updatephotos =BlogSystemHelper::updatephotos($blogcategory['id'], $this->morphtables_type, $photosData, 'blogcategory');
 
         // Photos - Upload new photos
         if ($request->hasFile('photos')) {
 
             $files = $request->file('photos');
 
-            $upload = CustomHelper::uploadphotos($blogcategory['id'], $this->morphtables_type, $files, 'blogcategory');
+            $upload =BlogSystemHelper::uploadphotos($blogcategory['id'], $this->morphtables_type, $files, 'blogcategory');
 
         }
 
@@ -183,7 +183,7 @@ class BlogcategoriesController extends Controller
             return back()->with('alert-danger', 'This blogcategory cannot be removed because there are currently ' . $blogcategory->children()->count() . ' sub-blogcategories associated with it. Please remove the posts first.');
         } else {
             if ($blogcategory->photos()) {
-                CustomHelper::removephotosfromfolder($blogcategory->photos()->get(), 'blogcategory');
+               BlogSystemHelper::removephotosfromfolder($blogcategory->photos()->get(), 'blogcategory');
 
                 $photo = Photo::where('photostable_id', '=', $blogcategory['id'])->where('photostable_type', '=', $this->morphtables_type)->delete();
 

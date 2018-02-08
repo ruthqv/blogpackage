@@ -22,6 +22,7 @@ class BlogController extends Controller
 
    public function url(Request $request, $blogcategoryuri, ...$suburis)
     {
+
         // if came an array of parameters, we will deal with the last parameter, because lang_fields table has a unique uri for all table
         if ($suburis) {
 

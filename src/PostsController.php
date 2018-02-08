@@ -2,7 +2,7 @@
 
 namespace blog\blogsystem;
 
-use App\Helpers\CustomHelper;
+use blog\blogsystem\Helpers\BlogSystemHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Photo;
 use blog\blogsystem\Models\Post;
@@ -64,7 +64,7 @@ class PostsController extends Controller
 
                 $files = $request->file('photos');
 
-                $upload = CustomHelper::uploadphotos($createdPost['id'], $this->morphtables_type, $files, 'posts');
+                $upload =blog\blogsystem\Helpers\BlogSystemHelper::uploadphotos($createdPost['id'], $this->morphtables_type, $files, 'posts');
             }
 
             cache()->flush();
@@ -95,11 +95,11 @@ class PostsController extends Controller
         $data['special'] = isset($data['special']) && $data['special'] == 'on';
         $data['new']     = isset($data['new']) && $data['new'] == 'on';
 
-        $updatephotos = CustomHelper::updatephotos($post['id'], $this->morphtables_type, $photosData, 'posts');
+        $updatephotos =blog\blogsystem\Helpers\BlogSystemHelper::updatephotos($post['id'], $this->morphtables_type, $photosData, 'posts');
         // Photos - Upload new photos
         if ($request->hasFile('photos')) {
             $files  = $request->file('photos');
-            $upload = CustomHelper::uploadphotos($post['id'], $this->morphtables_type, $files, 'posts');
+            $upload =blog\blogsystem\Helpers\BlogSystemHelper::uploadphotos($post['id'], $this->morphtables_type, $files, 'posts');
         }
 
         $productarray = ['name', 'uri', 'description', 'blogcategory_id', 'special', 'new', 'order'];
@@ -155,7 +155,7 @@ class PostsController extends Controller
 
 
         if ($post->photos()) {
-            CustomHelper::removephotosfromfolder($post->photos()->get(), 'posts');
+           blog\blogsystem\Helpers\BlogSystemHelper::removephotosfromfolder($post->photos()->get(), 'posts');
 
             $photo = Photo::where('photostable_id', '=', $post['id'])->where('photostable_type', '=', $this->morphtables_type)->delete();
 

@@ -1,12 +1,10 @@
 <?php
-
-
 namespace blog\blogsystem\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
 use Schema;
-use App\Helpers\CustomHelper;
+use blog\blogsystem\Helpers\BlogSystemHelper;
 use langs\langssystem\Models\Lang;
 class Blogcategory extends Model
 {
@@ -59,7 +57,7 @@ class Blogcategory extends Model
                 'name'       => $field,
                 'lenght'     => $column->getLength(),
                 'type'       => Schema::getColumnType($this->table, $field),
-                'values'     => CustomHelper::getEnumValues($this->table, $field),
+                'values'     => BlogSystemHelper::getEnumValues($this->table, $field),
                 'default'    => $column->getDefault(),
                 'nonullable' => $column->getNotnull(),
 
@@ -81,7 +79,7 @@ class Blogcategory extends Model
                 'name'       => $field,
                 'lenght'     => $column->getLength(),
                 'type'       => Schema::getColumnType('lang_fields', $field),
-                'values'     => CustomHelper::getEnumValues('lang_fields', $field),
+                'values'     => BlogSystemHelper::getEnumValues('lang_fields', $field),
                 'default'    => $column->getDefault(),
                 'nonullable' => $column->getNotnull(),
 

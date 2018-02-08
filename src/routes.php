@@ -68,9 +68,9 @@ Route::group(['prefix' => 'blog', 'as' => 'blog'], function () {
     Route::get('blogcategories/{categoryuri}/{subcategoryuri?}/{producturi?}/{query?}', 'blog\blogsystem\BlogController@url')
         ->where([
             'query'          => '.+',
-            'categoryuri'    => '[0-9a-z\-]+',
-            'subcategoryuri' => '[0-9a-z\-]+',
-            'posturi'        => '[0-9a-z\-]+',
+            'categoryuri'    => '[0-9A-Za-z\-]+',
+            'subcategoryuri' => '[0-9A-Za-z\-]+',
+            'posturi'        => '[0-9A-Za-z\-]+',
         ])
         ->name('.blogcategory');
 
