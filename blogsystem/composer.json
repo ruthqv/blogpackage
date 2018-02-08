@@ -1,0 +1,31 @@
+{
+    "name": "blog/blogsystem",
+    "description": "blog system",
+    "type": "package",
+    "version": "1.0.0",
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "blog\\blogsystem\\BlogSystemServiceProvider"
+            ],
+            "aliases": {
+            "blog": "blog\\blogsystem\\Facade"
+             }
+          }
+    },
+    "authors": [{
+        "name": "ruthqv",
+        "email": "rqvaquero@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6.4",
+        "comments/commentssystem":"*"
+    },
+    "autoload": {
+        "psr-4": {
+            "blog\\blogsystem\\": "src/"
+        }
+    }
+}
