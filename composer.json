@@ -1,5 +1,5 @@
 {
-    "name": "blog/blogpackage",
+    "name": "blog/blogsystem",
     "description": "blog system",
     "type": "package",
     "version": "1.0.0",
