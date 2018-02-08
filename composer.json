@@ -1,6 +1,6 @@
 {
     "name": "blog/blogsystem",
-    "description": "blog system",
+    "description": "blogsystem",
     "type": "package",
     "version": "1.0.0",
     "license": "MIT",
