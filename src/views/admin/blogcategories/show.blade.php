@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('blog::admin.master')
 @section('previous')
 <a type="submit" href="{{ route('admin.blog.blogcategories.index') }}" class="btn btn-sm btn-primary" target="_blank" title="go back"><i class="fa fa-angle-left"></i> GO BACK</a>
             <h2>Edit Category</h2>

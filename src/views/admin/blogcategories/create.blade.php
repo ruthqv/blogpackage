@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('blog::admin.master')
 
 @section('content') 
             <form method="POST" action="{{ route('admin.blog.blogcategories.store') }}" accept-charset="UTF-8" role="form"  enctype="multipart/form-data" >
